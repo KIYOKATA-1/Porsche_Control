@@ -1,0 +1,117 @@
+import { StyleSheet} from 'react-native';
+
+export const HStyle = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#0d0d0f',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    textContainer: {
+        position: 'relative',
+        width: 229,
+        height: 50,
+        right: 75,
+        bottom: 40,
+        alignItems: 'center',
+    },
+    firstText:{
+        fontSize: 40,
+        color: '#FFFFFF',
+        alignSelf: 'center',
+        fontFamily: 'caveat-bold',
+    },
+    secondText:{
+        fontFamily: 'caveat-regular',
+        fontSize: 40,
+    },
+    thirdText:{
+        color: '#FFFFFF',
+        position: 'relative',
+        top: 10,
+        fontSize: 30,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        fontFamily: 'caveat-regular',
+    },
+    car:{
+        position: 'relative',
+        width: 530,
+        height: 300,
+        objectFit: 'contain',
+        opacity: 1,
+    },
+    menu:{
+        position: 'relative',
+        top: 50,
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 20,
+        width: 400,
+        flexWrap: 'wrap',
+        height: 300,
+    },
+    menuBlock:{
+        marginBottom: 10, 
+        width: 190,
+        height: 75,
+        borderRadius: 20,
+        paddingHorizontal: 20, 
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        textAlign: 'center',
+        borderWidth: 1,
+        borderColor:  'white',
+    },
+    switchBlock:{
+        position: 'relative',
+        transform: [{rotate: '270deg'}],
+        justifyContent: 'flex-end',
+        right: 20,
+    },
+    menuBlockActive: {
+        backgroundColor: '#ffffff', 
+        shadowColor: "#FFF",     
+        shadowOffset: { width: 0, height: 2 }, 
+        shadowOpacity: 0.8,   
+        shadowRadius: 15,   
+    },
+    
+    menuBlockInactive: {
+        backgroundColor: 'transparent',
+    },
+    menuTxt:{
+        position: 'relative',
+        justifyContent: 'center',
+        alignSelf: 'center',
+        alignItems: 'center',
+        width: 100,
+    },
+    optionN:{
+        fontSize: 20,
+        fontFamily: 'outfit-bold',
+    },
+    state:{
+        alignSelf: 'center',
+        fontSize: 16,
+        fontFamily: 'outfit-regular',
+    },
+    btnGroup:{
+        position :'relative',
+        flexDirection: 'row', 
+        justifyContent: 'space-around',
+        marginTop: 20 ,
+        bottom: 40,
+    },
+    carColor: {
+        width: 50,
+        height: 25,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 20,
+        marginHorizontal: 25,
+        borderWidth: 1,
+        borderColor: 'white',
+
+    },
+  });
