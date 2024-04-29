@@ -43,7 +43,7 @@ export const HStyle = StyleSheet.create({
     },
     menu:{
         position: 'relative',
-        top: 50,
+        top: 25,
         display: 'flex',
         flexDirection: 'row',
         gap: 20,
@@ -99,19 +99,28 @@ export const HStyle = StyleSheet.create({
     btnGroup:{
         position :'relative',
         flexDirection: 'row', 
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         marginTop: 20 ,
-        bottom: 40,
+        bottom: 50,
     },
     carColor: {
-        width: 50,
-        height: 25,
+        width: 55,
+        height: 30,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 20,
-        marginHorizontal: 25,
+        marginHorizontal: 30,
         borderWidth: 1,
         borderColor: 'white',
-
     },
+    btnGroupTxt:{
+        color: 'white',
+        justifyContent: 'center',
+        position: 'relative',
+        bottom:50,
+        fontSize: 25,
+        margin: 5,
+        alignSelf: 'center',
+        fontFamily: 'caveat-regular'
+    }
   });

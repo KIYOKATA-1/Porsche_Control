@@ -1,10 +1,11 @@
 import { Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { PrStyle } from '../styles/profile';
+import Sound from 'react-native-sound';
 import {useRoute} from '@react-navigation/native';
 import PROFILE from '../assets/img/PROFILE';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faRoad} from '@fortawesome/free-solid-svg-icons';
+import { faRoad, faPlay, faPause, faStop } from '@fortawesome/free-solid-svg-icons';
 const { width } = Dimensions.get('window');
 
 export default function Profile() {
@@ -12,7 +13,24 @@ export default function Profile() {
   const username = route.params?.username;  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fuelLevel, setFuelLevel] = useState(45);
+  const [player, setPlayer] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
+
+  useEffect(() => {
+    const sound = new Sound(require(''), (error) => {
+      if (error) {
+        console.log('Failed to load the sound', error);
+        return;
+      }
+      // loaded successfully
+      console.log('Duration in seconds: ' + sound.getDuration() + ' number of channels: ' + sound.getNumberOfChannels());
+    });
+
+    setPlayer(sound);
+
+    return () => sound.release(); // Release the sound instance on component unmount
+  }, []);
 
   const handleScroll = event => {
     const newIndex = Math.floor(event.nativeEvent.contentOffset.x / width);

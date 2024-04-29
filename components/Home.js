@@ -151,6 +151,7 @@ export default function Home() {
                 </View>
                 
             </View>
+            <Text style={HStyle.btnGroupTxt}>CHOOSE COLOR</Text>
             <View style={HStyle.btnGroup}>
                 {imageKeys.map((key, index) => (
                     <TouchableOpacity
