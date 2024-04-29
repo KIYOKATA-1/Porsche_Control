@@ -5,7 +5,6 @@ import {useRoute} from '@react-navigation/native';
 import PROFILE from '../assets/img/PROFILE';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faRoad} from '@fortawesome/free-solid-svg-icons';
-import { Audio } from 'expo-av';
 const { width } = Dimensions.get('window');
 
 export default function Profile() {
