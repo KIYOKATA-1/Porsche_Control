@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dbUri = 'mongodb+srv://Kiyokata:X8OP4AtIUyvkTLBw@porsche.nfbkcin.mongodb.net/?retryWrites=true&w=majority&appName=PORSCHE';
+const dbUri = 'mongodb+srv://Kiyokata:nhZvEcjuqqeSQBi5@porsche.nfbkcin.mongodb.net/?retryWrites=true&w=majority&appName=PORSCHE';
 
 mongoose.connect(dbUri, {
   useNewUrlParser: true,
