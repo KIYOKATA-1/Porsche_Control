@@ -1,18 +1,17 @@
 import { Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView, Dimensions} from 'react-native';
 import React, {useState} from 'react';
 import { PrStyle } from '../styles/profile';
-import { useNavigation , useRoute} from '@react-navigation/native';
+import {useRoute} from '@react-navigation/native';
 import PROFILE from '../assets/img/PROFILE';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faRoad, faPlay, faPause, faStop  } from '@fortawesome/free-solid-svg-icons';
-import Slider from '@react-native-community/slider';
+import { faRoad} from '@fortawesome/free-solid-svg-icons';
 const { width } = Dimensions.get('window');
 
 export default function Profile() {
   const route = useRoute();
   const username = route.params?.username;  
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fuelLevel, setFuelLevel] = useState(0);
+  const [fuelLevel, setFuelLevel] = useState(45);
 
 
   const handleScroll = event => {
@@ -37,9 +36,9 @@ export default function Profile() {
         elevation: 5,
       };
     } else if (percentage < 0.6) {
-      color = 'yellow';
+      color = '#CCFF00';
       shadow = {
-        shadowColor: 'yellow',
+        shadowColor: '#CCFF00',
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 0.8,
         shadowRadius: 10,
