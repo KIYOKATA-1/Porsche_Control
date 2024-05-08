@@ -43,8 +43,8 @@ export default function Climate() {
         minimumValue={10} 
         maximumValue={30}
         onValueChange={handleSliderChange}
-        minimumTrackTintColor="#FFFFFF"
-        maximumTrackTintColor="#000000"
+        minimumTrackTintColor="#CFFF7F"
+        maximumTrackTintColor="#FFFFFF"
         thumbTintColor="#FFFFFF"
       />
       <View style={CStyle.buttonGroup}>

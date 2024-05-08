@@ -34,8 +34,8 @@ export default function Home() {
 
     const switchStyle = (isActive) => ({
         borderWidth: 2,
-        borderColor: isActive ? 'black' : 'white',
-        shadowColor: isActive ? 'black' : 'white',
+        borderColor: isActive ? 'black' : '#CFFF7F',
+        shadowColor: isActive ? 'black' : '#CFFF7F',
         shadowOffset: { width: 0, height: 0 },
         shadowOpacity: 3,
         shadowRadius: 10,
@@ -65,7 +65,7 @@ export default function Home() {
     };
 
     const textColor = (isActive) => ({
-        color: isActive ? 'black' : 'white'
+        color: isActive ? 'black' : '#CFFF7F'
     });
 
     return (
@@ -89,7 +89,7 @@ export default function Home() {
                             value={engineState}
                             onValueChange={toggleEngine}
                             trackColor={{ false: 'transparent', true: 'transparent' }} 
-                            thumbColor={engineState ? 'black' : 'white'}
+                            thumbColor={engineState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(engineState)}
                         />
@@ -107,7 +107,7 @@ export default function Home() {
                             value={doorState}
                             onValueChange={toggleDoor}
                             trackColor={{ false: 'transparent', true: 'transparent' }}
-                            thumbColor={doorState ? 'black' : 'white'}
+                            thumbColor={doorState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(doorState)}
                         />
@@ -125,7 +125,7 @@ export default function Home() {
                             value={trunkState}
                             onValueChange={toggleTrunk}
                             trackColor={{ false: 'transparent', true: 'transparent' }}
-                            thumbColor={trunkState ? 'black' : 'white'}
+                            thumbColor={trunkState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(trunkState)}
                         />
@@ -143,7 +143,7 @@ export default function Home() {
                             value={climateState}
                             onValueChange={toggleClimate}
                             trackColor={{ false: 'transparent', true: 'transparent' }}
-                            thumbColor={climateState ? 'black' : 'white'}
+                            thumbColor={climateState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(climateState)}
                         />

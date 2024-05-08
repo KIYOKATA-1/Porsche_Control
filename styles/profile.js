@@ -51,7 +51,7 @@ export const PrStyle = StyleSheet.create({
         position: 'relative',
         flexDirection: 'row',
         display: 'flex',
-        top: 105,
+        top: 75,
         alignItems: 'center',
     }
     ,

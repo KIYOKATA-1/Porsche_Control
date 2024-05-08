@@ -17,7 +17,7 @@ export const HStyle = StyleSheet.create({
     },
     firstText:{
         fontSize: 40,
-        color: '#FFFFFF',
+        color: '#CFFF7F',
         alignSelf: 'center',
         fontFamily: 'caveat-bold',
     },
@@ -26,7 +26,7 @@ export const HStyle = StyleSheet.create({
         fontSize: 40,
     },
     thirdText:{
-        color: '#FFFFFF',
+        color: '#CFFF7F',
         position: 'relative',
         top: 10,
         fontSize: 30,
@@ -61,7 +61,7 @@ export const HStyle = StyleSheet.create({
         justifyContent: 'space-between',
         textAlign: 'center',
         borderWidth: 1,
-        borderColor:  'white',
+        borderColor:  '#CFFF7F',
     },
     switchBlock:{
         position: 'relative',
@@ -70,8 +70,8 @@ export const HStyle = StyleSheet.create({
         right: 20,
     },
     menuBlockActive: {
-        backgroundColor: '#ffffff', 
-        shadowColor: "#FFF",     
+        backgroundColor: '#CFFF7F', 
+        shadowColor: "#CFFF7F",     
         shadowOffset: { width: 0, height: 2 }, 
         shadowOpacity: 0.8,   
         shadowRadius: 15,   
@@ -110,11 +110,11 @@ export const HStyle = StyleSheet.create({
         alignItems: 'center',
         borderRadius: 20,
         marginHorizontal: 30,
-        borderWidth: 1,
-        borderColor: 'white',
+        borderWidth: 2,
+        borderColor: '#CFFF7F',
     },
     btnGroupTxt:{
-        color: 'white',
+        color: '#CFFF7F',
         justifyContent: 'center',
         position: 'relative',
         bottom:50,

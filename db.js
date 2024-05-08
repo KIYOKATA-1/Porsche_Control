@@ -9,6 +9,8 @@ mongoose.connect(dbUri, {
 
 const db = mongoose.connection;
 
+
+
 db.on('error', (error) => {
   console.error('MongoDB connection error:', error);
 });

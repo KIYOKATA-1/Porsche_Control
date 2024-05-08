@@ -1,5 +1,5 @@
-import { Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView, Dimensions, Button} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import { Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView, Dimensions, Animated} from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
 import { PrStyle } from '../styles/profile';
 import {useRoute} from '@react-navigation/native';
 import PROFILE from '../assets/img/PROFILE';
@@ -8,10 +8,11 @@ import { faRoad} from '@fortawesome/free-solid-svg-icons';
 const { width } = Dimensions.get('window');
 
 export default function Profile() {
+  
   const route = useRoute();
   const username = route.params?.username;  
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fuelLevel, setFuelLevel] = useState(45);
+  const [fuelLevel, setFuelLevel] = useState(25);
 
   const handleScroll = event => {
     const newIndex = Math.floor(event.nativeEvent.contentOffset.x / width);

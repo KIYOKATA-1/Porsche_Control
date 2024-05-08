@@ -9,7 +9,7 @@ export const CStyle = StyleSheet.create({
     },
     name:{
         position: 'relative',
-        color: 'white',
+        color: '#CFFF7F',
         fontSize: 32,
         fontFamily: 'coda-regular',
         bottom: 225,
@@ -19,7 +19,7 @@ export const CStyle = StyleSheet.create({
     },
     temperature:{
         position: 'relative',
-        color: 'white',
+        color: '#CFFF7F',
         fontSize: 70,
         textAlign: 'center',
         width: 250,
@@ -39,7 +39,7 @@ export const CStyle = StyleSheet.create({
         borderRadius: 50,
         backgroundColor: 'transparent',
         borderWidth: 0.5,
-        borderColor: 'white',
+        borderColor: '#CFFF7F',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 25,
@@ -59,7 +59,7 @@ export const CStyle = StyleSheet.create({
     },
     buttonText:{
         fontSize: 16,
-        color: 'white',
+        color: '#CFFF7F',
         fontFamily: 'coda-regular',
         textAlign: 'center',
         top: 15,
