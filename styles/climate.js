@@ -7,9 +7,27 @@ export const CStyle = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    containerLight:{
+        flex: 1,
+        backgroundColor: '#FBFAFE',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+    ,
+    nameLight:{
+        position: 'relative',
+        color: '#63519F',
+        fontSize: 32,
+        fontFamily: 'coda-regular',
+        bottom: 225,
+        width: 154,
+        height: 38,
+        textAlign: 'center',
+    }
+    ,
     name:{
         position: 'relative',
-        color: '#CFFF7F',
+        color: '#CDBDFA',
         fontSize: 32,
         fontFamily: 'coda-regular',
         bottom: 225,
@@ -19,7 +37,17 @@ export const CStyle = StyleSheet.create({
     },
     temperature:{
         position: 'relative',
-        color: '#CFFF7F',
+        color: '#CDBDFA',
+        fontSize: 70,
+        textAlign: 'center',
+        width: 250,
+        height: 85,
+        bottom: 100,
+        fontFamily: 'coda-regular',
+    },
+    temperatureLight:{
+        position: 'relative',
+        color: '#63519F',
         fontSize: 70,
         textAlign: 'center',
         width: 250,
@@ -37,9 +65,21 @@ export const CStyle = StyleSheet.create({
         width:60,
         height: 40,
         borderRadius: 50,
-        backgroundColor: 'transparent',
+        backgroundColor: '#63519F',
         borderWidth: 0.5,
-        borderColor: '#CFFF7F',
+        borderColor: '#CDBDFA',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 25,
+        padding: 10,
+    },
+    btnCLight:{
+        width:60,
+        height: 40,
+        borderRadius: 50,
+        backgroundColor: '#FBFAFE',
+        borderWidth: 2,
+        borderColor: '#63519F',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 25,
@@ -52,14 +92,28 @@ export const CStyle = StyleSheet.create({
         justifyContent: 'space-between',
     },
     icon:{
-        color: 'white'
+        color: '#FBFAFE'
+    },
+    iconLight:{
+        color: '#63519F'
     },
     iconActive:{
-        color: 'black'
+        color: '#63519F'
+    },
+    iconActiveLight:{
+        color: '#FBFAFE'
     },
     buttonText:{
         fontSize: 16,
-        color: '#CFFF7F',
+        color: '#CDBDFA',
+        fontFamily: 'coda-regular',
+        textAlign: 'center',
+        top: 15,
+        textTransform: 'uppercase'
+    },
+    buttonTextLight:{
+        fontSize: 16,
+        color: '#63519F',
         fontFamily: 'coda-regular',
         textAlign: 'center',
         top: 15,
@@ -73,14 +127,28 @@ export const CStyle = StyleSheet.create({
         width: 60,
         height: 40,
         borderRadius: 50,
-        backgroundColor: '#FFF',
+        backgroundColor: '#CDBDFA',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 25,
         padding: 10,
-        shadowColor: '#FFF',
+        shadowColor: '#CDBDFA',
         shadowOffset: {width: 0, height: 0},
         shadowOpacity: 0.8,
         shadowRadius: 25,
+    },
+    btnActiveLight:{
+        width: 60,
+        height: 40,
+        borderRadius: 50,
+        backgroundColor: '#63519F',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 25,
+        padding: 10,
+        shadowColor: '#63519F',
+        shadowOffset: {width: 0, height: 0},
+        shadowOpacity: 0.8,
+        shadowRadius: 20,
     }
   });

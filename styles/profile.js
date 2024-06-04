@@ -7,6 +7,38 @@ export const PrStyle = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    switchC:{
+        position: 'relative',
+        top: 150,
+        alignSelf: 'center',
+        alignItems: 'center',
+    }
+    ,
+    switchTextLight:{
+        position: 'relative',
+        color: 'black',
+        fontSize: 16,
+        top: 20,
+        fontFamily: 'outfit-regular',
+        textAlign: 'center',
+        alignSelf: 'center',
+    },
+    switchTextDark:{
+        position: 'relative',
+        color: 'white',
+        fontSize: 16,
+        top: 20,
+        fontFamily: 'coda-regular',
+        textAlign: 'center',
+        alignSelf: 'center',
+    },
+    containerLight:{
+        flex: 1,
+        backgroundColor: '#FBFAFE',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+    ,
     textC:{
         position: 'absolute',
         justifyContent: 'center',
@@ -20,6 +52,14 @@ export const PrStyle = StyleSheet.create({
         margin: 10,
         textTransform: 'uppercase',
     },
+    welcomeLight:{
+        color: 'black',
+        fontSize: 30,
+        fontFamily: 'coda-bold',
+        margin: 10,
+        textTransform: 'uppercase',
+    }
+    ,
     username:{
         color: 'white',
         fontSize: 25,
@@ -27,6 +67,14 @@ export const PrStyle = StyleSheet.create({
         textTransform: 'uppercase',
         margin: 10,
     },
+    usernameLight:{
+        color: 'black',
+        fontSize: 25,
+        fontFamily: 'outfit-bold',
+        textTransform: 'uppercase',
+        margin: 10,
+    }
+    ,
     car:{
         height: 270,
         objectFit: 'contain',
@@ -38,11 +86,27 @@ export const PrStyle = StyleSheet.create({
         shadowOpacity: 0.4,   
         shadowRadius: 50,   
     },
+    carLight:{
+        height: 270,
+        objectFit: 'contain',
+        shadowColor: "black",     
+        shadowOffset: { width: 2, height: -50}, 
+        padding: 10,
+        borderRadius: 25,
+        borderWidth: 1,
+        borderColor: 'black',
+        shadowOpacity: 0.4,   
+        shadowRadius: 50,  
+    }
+    ,
     carC:{
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
         top: 200,
+    },
+    carCLight:{
+
     },
     infoC:{
         position: 'relative',
@@ -51,7 +115,7 @@ export const PrStyle = StyleSheet.create({
         position: 'relative',
         flexDirection: 'row',
         display: 'flex',
-        top: 75,
+        top: 100,
         alignItems: 'center',
     }
     ,
@@ -76,6 +140,7 @@ export const PrStyle = StyleSheet.create({
         width: 75,
         height: 75,
         left: 30,
+        top: 5,
         borderWidth: 4,
         justifyContent: 'center',
         alignItems: 'center',
@@ -83,6 +148,12 @@ export const PrStyle = StyleSheet.create({
     },
     tankData:{
         color: 'white',
+        fontFamily: 'coda-regular',
+        fontSize: 20,
+        position: 'relative',
+    },
+    tankDataLight:{
+        color: 'black',
         fontFamily: 'coda-regular',
         fontSize: 20,
         position: 'relative',

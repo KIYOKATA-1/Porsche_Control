@@ -30,7 +30,7 @@ export default function Signin() {
       return;
     }
     try {
-      const response = await axios.post('http://с/signin', { username, password });
+      const response = await axios.post('http://localhost:5060/signin', { username, password });
       if (response.data === "User authenticated successfully") {
         navigation.navigate('Main', { screen: 'Profile', params: { username: username } });
       } else {

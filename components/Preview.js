@@ -7,7 +7,6 @@ import { useNavigation } from '@react-navigation/native';
 export default function Preview() {
   const navigation = useNavigation();
   return (
-    
     <SafeAreaView style={PStyle.container}>
       <View>
         <Image style={PStyle.logo} source={IMAGES.LOGO}></Image>

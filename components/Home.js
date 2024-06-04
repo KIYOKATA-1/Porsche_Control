@@ -3,7 +3,7 @@ import { Text, View, SafeAreaView, Switch, TouchableOpacity, Animated } from 're
 import { useNavigation } from '@react-navigation/native';
 import { HStyle } from '../styles/home';
 import CARS from '../assets/img/CARS';
-
+import { useTheme } from './ThemeProvider';
 export default function Home() {
     const navigation = useNavigation();
     const [engineState, setEngineState] = useState(false);
@@ -14,6 +14,7 @@ export default function Home() {
     const [fadeAnim] = useState(new Animated.Value(0));
     const scaleAnim = useRef(new Animated.Value(1.5)).current;
 
+    const {isLightTheme, toggleTheme} = useTheme();
     const imageKeys = Object.keys(CARS);
 
     const toggleEngine = () => {
@@ -34,11 +35,12 @@ export default function Home() {
 
     const switchStyle = (isActive) => ({
         borderWidth: 2,
-        borderColor: isActive ? 'black' : '#CFFF7F',
-        shadowColor: isActive ? 'black' : '#CFFF7F',
+        borderColor: isLightTheme ? (isActive ? '#CDBDFA' : '#63519F') : (isActive ? '#63519F' : '#CDBDFA'),
+        shadowColor: isLightTheme ? (isActive ? '#CDBDFA' : '#63519F') : (isActive ? '#63519F' : '#CDBDFA'),
         shadowOffset: { width: 0, height: 0 },
         shadowOpacity: 3,
         shadowRadius: 10,
+        tintColor:isLightTheme ? (isActive ? '#CDBDFA' : '#63519F') : (isActive ? '#63519F' : '#CDBDFA'),
     });
 
     const handleSetImageIndex = (index) => {
@@ -65,20 +67,27 @@ export default function Home() {
     };
 
     const textColor = (isActive) => ({
-        color: isActive ? 'black' : '#CFFF7F'
+        color: isLightTheme ? (isActive ? '#FBFAFE' : '#63519F') : (isActive ? '#1C1A26' : '#CDBDFA')
     });
 
+    const containerStyle = isLightTheme ? HStyle.containerLight : HStyle.container;
+    const firstTextStyle = isLightTheme ? HStyle.firstTextLight : HStyle.firstText;
+    const secondTextStyle = isLightTheme ? HStyle.secondTextLight : HStyle.secondText;
+    const thirdTextStyle = isLightTheme ? HStyle.thirdTextLight : HStyle.thirdText;
+    const menuBlockStyle = isLightTheme ? HStyle.menuBlockLight : HStyle.menuBlock;
+    const menuBlockActiveStyle = isLightTheme ? HStyle.menuBlockActiveLight : HStyle.menuBlockActive;
+
     return (
-        <SafeAreaView style={HStyle.container}>
+        <SafeAreaView style={containerStyle}>
             <View style={HStyle.textContainer}>
-                <Text style={HStyle.firstText}>PORSCHE <Text style={HStyle.secondText}>911</Text></Text>
-                <Text style={HStyle.thirdText}>GT3 RS</Text>
+                <Text style={firstTextStyle}>PORSCHE <Text style={secondTextStyle}>911</Text></Text>
+                <Text style={thirdTextStyle}>GT3 RS</Text>
             </View>
             <Animated.View style={{ opacity: fadeAnim, transform: [{ scale: scaleAnim }] }}>
                     <Animated.Image source={CARS[imageKeys[imageIndex]]} style={HStyle.car} />
             </Animated.View>
             <View style={HStyle.menu}>
-                <View style={[HStyle.menuBlock, engineState ? HStyle.menuBlockActive : HStyle.menuBlockInactive]}>
+                <View style={[menuBlockStyle, engineState ? menuBlockActiveStyle : HStyle.menuBlockInactive]}>
                     <View style={HStyle.menuTxt}>
                         <Text style={[HStyle.optionN, textColor(engineState)]}>ENGINE</Text>
                         <Text> </Text>
@@ -89,32 +98,30 @@ export default function Home() {
                             value={engineState}
                             onValueChange={toggleEngine}
                             trackColor={{ false: 'transparent', true: 'transparent' }} 
-                            thumbColor={engineState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(engineState)}
                         />
                     </View>
                 </View>
 
-                <View style={[HStyle.menuBlock, doorState ? HStyle.menuBlockActive : HStyle.menuBlockInactive]}>
+                <View style={[menuBlockStyle, doorState ? menuBlockActiveStyle : HStyle.menuBlockInactive]}>
                     <View style={HStyle.menuTxt}>
                         <Text style={[HStyle.optionN, textColor(doorState)]}>DOOR</Text>
                         <Text> </Text>
                         <Text style={[HStyle.state, textColor(doorState)]}>{doorState ? 'OPENED' : 'CLOSED'}</Text>
                     </View>
-                    <View style={HStyle.switchBlock}> 
+                    <View style={HStyle.switchBlock}>
                         <Switch
                             value={doorState}
                             onValueChange={toggleDoor}
                             trackColor={{ false: 'transparent', true: 'transparent' }}
-                            thumbColor={doorState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(doorState)}
                         />
                     </View>
                 </View>
 
-                <View style={[HStyle.menuBlock, trunkState ? HStyle.menuBlockActive : HStyle.menuBlockInactive]}>
+                <View style={[menuBlockStyle, trunkState ? menuBlockActiveStyle : HStyle.menuBlockInactive]}>
                     <View style={HStyle.menuTxt}>
                         <Text style={[HStyle.optionN, textColor(trunkState)]}>TRUNK</Text>
                         <Text> </Text>
@@ -125,14 +132,13 @@ export default function Home() {
                             value={trunkState}
                             onValueChange={toggleTrunk}
                             trackColor={{ false: 'transparent', true: 'transparent' }}
-                            thumbColor={trunkState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(trunkState)}
                         />
                     </View>
                 </View>
 
-                <View style={[HStyle.menuBlock, climateState ? HStyle.menuBlockActive : HStyle.menuBlockInactive]}>
+                <View style={[menuBlockStyle, climateState ? menuBlockActiveStyle : HStyle.menuBlockInactive]}>
                     <View style={HStyle.menuTxt}>
                         <Text style={[HStyle.optionN, textColor(climateState)]}>CLIMATE</Text>
                         <Text> </Text>
@@ -143,7 +149,6 @@ export default function Home() {
                             value={climateState}
                             onValueChange={toggleClimate}
                             trackColor={{ false: 'transparent', true: 'transparent' }}
-                            thumbColor={climateState ? 'black' : '#CFFF7F'}
                             ios_backgroundColor="transparent"
                             style={switchStyle(climateState)}
                         />

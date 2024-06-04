@@ -2,10 +2,16 @@ import { StyleSheet} from 'react-native';
 
 export const HStyle = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: '#0d0d0f',
-      alignItems: 'center',
-      justifyContent: 'center',
+        flex: 1,
+        backgroundColor: '#0d0d0f',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    containerLight: {
+        flex: 1,
+        backgroundColor: '#FBFAFE',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     textContainer: {
         position: 'relative',
@@ -15,18 +21,29 @@ export const HStyle = StyleSheet.create({
         bottom: 40,
         alignItems: 'center',
     },
-    firstText:{
+    firstText: {
         fontSize: 40,
-        color: '#CFFF7F',
+        color: '#CDBDFA',
         alignSelf: 'center',
         fontFamily: 'caveat-bold',
     },
-    secondText:{
+    firstTextLight: {
+        fontSize: 40,
+        color: '#63519F',
+        alignSelf: 'center',
+        fontFamily: 'caveat-bold',
+    },
+    secondText: {
         fontFamily: 'caveat-regular',
         fontSize: 40,
     },
-    thirdText:{
-        color: '#CFFF7F',
+    secondTextLight: {
+        fontFamily: 'caveat-regular',
+        fontSize: 40,
+        color: '#63519F',
+    },
+    thirdText: {
+        color: '#CDBDFA',
         position: 'relative',
         top: 10,
         fontSize: 30,
@@ -34,14 +51,23 @@ export const HStyle = StyleSheet.create({
         alignSelf: 'center',
         fontFamily: 'caveat-regular',
     },
-    car:{
+    thirdTextLight: {
+        color: '#63519F',
+        position: 'relative',
+        top: 10,
+        fontSize: 30,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        fontFamily: 'caveat-regular',
+    },
+    car: {
         position: 'relative',
         width: 530,
         height: 300,
         objectFit: 'contain',
         opacity: 1,
     },
-    menu:{
+    menu: {
         position: 'relative',
         top: 25,
         display: 'flex',
@@ -51,56 +77,74 @@ export const HStyle = StyleSheet.create({
         flexWrap: 'wrap',
         height: 300,
     },
-    menuBlock:{
-        marginBottom: 10, 
+    menuBlock: {
+        marginBottom: 10,
         width: 190,
         height: 75,
         borderRadius: 20,
-        paddingHorizontal: 20, 
+        paddingHorizontal: 20,
         flexDirection: 'row',
         justifyContent: 'space-between',
         textAlign: 'center',
-        borderWidth: 1,
-        borderColor:  '#CFFF7F',
+        borderWidth: 2,
+        borderColor: '#CDBDFA',
     },
-    switchBlock:{
+    menuBlockLight: {
+        marginBottom: 10,
+        width: 190,
+        height: 75,
+        borderRadius: 20,
+        paddingHorizontal: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        textAlign: 'center',
+        borderWidth: 2,
+        borderColor: '#63519F',
+    },
+    switchBlock: {
         position: 'relative',
-        transform: [{rotate: '270deg'}],
+        transform: [{ rotate: '270deg' }],
         justifyContent: 'flex-end',
         right: 20,
     },
     menuBlockActive: {
-        backgroundColor: '#CFFF7F', 
-        shadowColor: "#CFFF7F",     
-        shadowOffset: { width: 0, height: 2 }, 
-        shadowOpacity: 0.8,   
-        shadowRadius: 15,   
+        backgroundColor: '#CDBDFA',
+        shadowColor: "#CDBDFA",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 15,
     },
-    
+    menuBlockActiveLight: {
+        backgroundColor: '#63519F',
+        shadowColor: "#63519F",
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 15,
+    },
     menuBlockInactive: {
         backgroundColor: 'transparent',
     },
-    menuTxt:{
+    menuTxt: {
         position: 'relative',
         justifyContent: 'center',
         alignSelf: 'center',
         alignItems: 'center',
         width: 100,
     },
-    optionN:{
+    optionN: {
         fontSize: 20,
         fontFamily: 'outfit-bold',
     },
-    state:{
+    state: {
         alignSelf: 'center',
         fontSize: 16,
         fontFamily: 'outfit-regular',
     },
-    btnGroup:{
-        position :'relative',
-        flexDirection: 'row', 
+    btnGroup: {
+        position: 'relative',
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 20 ,
+        marginTop: 20,
         bottom: 50,
     },
     carColor: {
@@ -111,16 +155,16 @@ export const HStyle = StyleSheet.create({
         borderRadius: 20,
         marginHorizontal: 30,
         borderWidth: 2,
-        borderColor: '#CFFF7F',
+        borderColor: '#CDBDFA',
     },
-    btnGroupTxt:{
-        color: '#CFFF7F',
+    btnGroupTxt: {
+        color: '#CDBDFA',
         justifyContent: 'center',
         position: 'relative',
-        bottom:50,
+        bottom: 50,
         fontSize: 25,
         margin: 5,
         alignSelf: 'center',
-        fontFamily: 'caveat-regular'
-    }
+        fontFamily: 'caveat-regular',
+    },
   });
