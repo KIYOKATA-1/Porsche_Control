@@ -1,3 +1,4 @@
+import { icon } from '@fortawesome/fontawesome-svg-core';
 import { StyleSheet } from 'react-native';
 
 const width = window.innerWidth;
@@ -50,7 +51,7 @@ export const MpStyle = StyleSheet.create({
     borderBottomWidth: 2,
     borderRadius: 0,
     padding: 10,
-    color: '#0d0d0f',
+    color: '#FBFAFE',
     fontFamily: 'coda-regular',
     fontSize: 24,
     flexWrap: 'wrap',
@@ -92,4 +93,10 @@ export const MpStyle = StyleSheet.create({
     flexDirection: 'row',
     bottom: 130,
   },
+  icon:{
+    color: '#FBFAFE'
+  },
+  iconLight:{
+    color: '#0d0d0f'
+  }
 });

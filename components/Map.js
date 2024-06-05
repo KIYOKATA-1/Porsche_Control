@@ -5,6 +5,7 @@ import axios from 'axios';
 import { MpStyle } from '../styles/map';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from './ThemeProvider';
 
 const apiKey = 'c0151a8e-a2e6-4de0-bf5c-61a4783447c3';
 
@@ -19,6 +20,7 @@ export default function Map() {
   const [search, setSearch] = useState('');
   const [marker, setMarker] = useState(null);
   const [debouncedSearch, setDebouncedSearch] = useState(search);
+  const {isLightTheme, toggleTheme} = useTheme();
 
   const zoomIn = () => {
     setRegion(prevRegion => ({
@@ -74,8 +76,12 @@ export default function Map() {
     }
   }, [debouncedSearch]);
 
+  const containerStyle = isLightTheme ? MpStyle.containerLight : MpStyle.container;
+  const inputStyle = isLightTheme ? MpStyle.searchInputLight : MpStyle.searchInput;
+  const plus_minusStyle = isLightTheme ? MpStyle.iconLight : MpStyle.icon;
+
   return (
-    <SafeAreaView style={MpStyle.container}>
+    <SafeAreaView style={containerStyle}>
       <MapView
         style={MpStyle.map}
         region={region}
@@ -88,15 +94,15 @@ export default function Map() {
       </MapView>
       <View style={MpStyle.btnC}>
         <TouchableOpacity onPress={zoomIn} style={MpStyle.btn}>
-          <FontAwesomeIcon icon={faPlus} style={MpStyle.btnIcon}/>
+          <FontAwesomeIcon icon={faPlus} style={plus_minusStyle}/>
         </TouchableOpacity>
         <TouchableOpacity onPress={zoomOut} style={MpStyle.btn}>
-          <FontAwesomeIcon icon={faMinus} style={{color: 'white'}}/>
+          <FontAwesomeIcon icon={faMinus} style={plus_minusStyle}/>
         </TouchableOpacity>
       </View>
       <View style={MpStyle.searchContainer}>
         <TextInput
-          style={MpStyle.searchInput}
+          style={inputStyle}
           placeholder="INPUT NAME OF CITY"
           placeholderTextColor={'white'}
           value={search}
