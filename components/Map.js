@@ -3,6 +3,8 @@ import { SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View, Butt
 import MapView, { Marker } from 'react-native-maps';
 import axios from 'axios';
 import { MpStyle } from '../styles/map';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 const apiKey = 'c0151a8e-a2e6-4de0-bf5c-61a4783447c3';
 
@@ -17,6 +19,22 @@ export default function Map() {
   const [search, setSearch] = useState('');
   const [marker, setMarker] = useState(null);
   const [debouncedSearch, setDebouncedSearch] = useState(search);
+
+  const zoomIn = () => {
+    setRegion(prevRegion => ({
+      ...prevRegion,
+      latitudeDelta: prevRegion.latitudeDelta / 2,
+      longitudeDelta: prevRegion.longitudeDelta / 2,
+    }));
+  }
+
+  const zoomOut = () => {
+    setRegion(prevRegion => ({
+      ...prevRegion,
+      latitudeDelta: prevRegion.latitudeDelta * 2,
+      longitudeDelta: prevRegion.longitudeDelta * 2,
+    }));
+  }
 
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -62,11 +80,20 @@ export default function Map() {
         style={MpStyle.map}
         region={region}
         onRegionChangeComplete={setRegion}
+        mapType='satellite'
       >
         {marker && (
           <Marker coordinate={marker} />
         )}
       </MapView>
+      <View style={MpStyle.btnC}>
+        <TouchableOpacity onPress={zoomIn} style={MpStyle.btn}>
+          <FontAwesomeIcon icon={faPlus} style={MpStyle.btnIcon}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={zoomOut} style={MpStyle.btn}>
+          <FontAwesomeIcon icon={faMinus} style={{color: 'white'}}/>
+        </TouchableOpacity>
+      </View>
       <View style={MpStyle.searchContainer}>
         <TextInput
           style={MpStyle.searchInput}
