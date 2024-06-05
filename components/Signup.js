@@ -11,7 +11,7 @@ export default function Signup() {
 
     const handleSignUp = async () => {
         try {
-            const response = await fetch('http://localhost:5060/signup', {
+            const response = await fetch('http://localhost:5012/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

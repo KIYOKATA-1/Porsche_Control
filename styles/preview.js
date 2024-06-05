@@ -1,4 +1,6 @@
-import { StyleSheet} from 'react-native';
+import { StyleSheet, StatusBar} from 'react-native';
+
+const STATUSBAR_HEIGHT = StatusBar.currentHeight;
 
 export const PStyle = StyleSheet.create({
     container: {
@@ -40,5 +42,8 @@ export const PStyle = StyleSheet.create({
         shadowOpacity: 0.8,  
         elevation: 20,
         shadowRadius: 20, 
+    },
+    statusBar: {
+        height: STATUSBAR_HEIGHT,
     },
   });

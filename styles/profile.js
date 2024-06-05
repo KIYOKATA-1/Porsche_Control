@@ -34,7 +34,7 @@ export const PrStyle = StyleSheet.create({
     },
     containerLight:{
         flex: 1,
-        backgroundColor: '#FBFAFE',
+        backgroundColor: '#9b9ba8',
         alignItems: 'center',
         justifyContent: 'center',
     }

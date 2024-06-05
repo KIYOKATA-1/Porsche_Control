@@ -19,19 +19,18 @@ function TabBarIcon({ route, focused }) {
     Map: faCompass,
     Profile: faUser,
   }[route.name];
-
-  const animatedValue = useRef(new Animated.Value(0)).current; 
+  const animatedValue = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(animatedValue, {
-      toValue: focused ? 10 : 0, 
-      duration: 2000,
+      toValue: focused ? 10 : 0,
+      duration: 200,
       useNativeDriver: true
     }).start();
-  }, [focused]); 
+  }, [focused]);
 
-  const backgroundColor =  'transparent';
-  const iconColor = focused ? (isLightTheme ? '#CDBDFA' : '#63519F') : '#CDBDFA';
+  const backgroundColor = focused ? (isLightTheme ? '#CDBDFA' : '#63519F') : 'transparent';
+  const iconColor = focused ? (isLightTheme ? '#63519F' : '#CDBDFA') : '#CDBDFA';
   const borderColor = focused ? (isLightTheme ? '#63519F' : '#CDBDFA') : '#CDBDFA';
 
   return (
@@ -44,15 +43,15 @@ function TabBarIcon({ route, focused }) {
       alignItems: 'center',
       shadowColor: isLightTheme ? 'white' : 'black',
       shadowOffset: { width: 0, height: 0 },
-      shadowRadius: animatedValue, 
+      shadowRadius: animatedValue,
       shadowOpacity: 1,
-      elevation: animatedValue, 
+      elevation: animatedValue,
       borderWidth: 2,
-      borderColor: isLightTheme ? '#63519F' : '#CDBDFA',
+      borderColor,
       position: 'relative',
       bottom: 25,
     }}>
-      <FontAwesomeIcon icon={iconName} size={20} color={isLightTheme ? '#63519F' : '#CDBDFA'} />
+      <FontAwesomeIcon icon={iconName} size={20} color={iconColor} />
     </Animated.View>
   );
 }
