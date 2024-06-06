@@ -1,5 +1,5 @@
 import { Text, View, SafeAreaView, Image, TouchableOpacity, ScrollView, Dimensions, Switch, StatusBar } from 'react-native';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect, useMemo} from 'react';
 import { PrStyle } from '../styles/profile';
 import { useRoute } from '@react-navigation/native';
 import PROFILE from '../assets/img/PROFILE';
@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faRoad } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from './ThemeProvider';
 const { width } = Dimensions.get('window');
+import RadioGroup from 'react-native-radio-buttons-group';
+
 
 export default function Profile() {
     const route = useRoute();
@@ -65,6 +67,22 @@ export default function Profile() {
   
         return { borderColor: color, ...shadow };
     };
+
+    const radioButtons = useMemo(() => ([
+        {
+            id: '1', 
+            label: 'Option 1',
+            value: 'option1'
+        },
+        {
+            id: '2',
+            label: 'Option 2',
+            value: 'option2'
+        }
+    ]), []);
+
+    const [selectedId, setSelectedId] = useState();
+
   
     const borderStyle = getBorderStyle(fuelLevel);
     const containerStyle = isLightTheme ? PrStyle.containerLight : PrStyle.container;
@@ -122,6 +140,13 @@ export default function Profile() {
                     ios_backgroundColor="transparent"
                />
                <Text style={switchTextStyle}>DARK | LIGHT</Text>
+            </View>
+            <View>
+            <RadioGroup 
+            radioButtons={radioButtons} 
+            onPress={setSelectedId}
+            selectedId={selectedId}
+        />
             </View>
         </SafeAreaView>
     );

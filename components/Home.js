@@ -1,5 +1,5 @@
 import React, { useState , useRef, useEffect} from 'react';
-import { Text, View, SafeAreaView, Switch, TouchableOpacity, Animated } from 'react-native';
+import { Text, View, SafeAreaView, Switch, TouchableOpacity, Animated, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { HStyle } from '../styles/home';
 import CARS from '../assets/img/CARS';
