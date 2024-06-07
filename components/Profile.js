@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faRoad } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from './ThemeProvider';
 const { width } = Dimensions.get('window');
-import RadioGroup from 'react-native-radio-buttons-group';
 
 
 export default function Profile() {
@@ -140,13 +139,6 @@ export default function Profile() {
                     ios_backgroundColor="transparent"
                />
                <Text style={switchTextStyle}>DARK | LIGHT</Text>
-            </View>
-            <View>
-            <RadioGroup 
-            radioButtons={radioButtons} 
-            onPress={setSelectedId}
-            selectedId={selectedId}
-        />
             </View>
         </SafeAreaView>
     );
